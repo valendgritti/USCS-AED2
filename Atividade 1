@@ -1,0 +1,35 @@
+#include <stdio.h>
+void soma (int a, int b, int *res) {
+    *res=a+b;
+}
+void quadcubo(int a, int b, int *quad, int *cubo){
+    *quad=a*a;
+    *cubo= b*b*b;
+}
+void troca(int *a, int *b){
+    int aux = *a;
+    *a = *b;
+    *b = aux;
+    printf ("Troca: a=%d e b=%d",*a,*b);
+}
+
+int main()
+{
+    int a, b, res, cubo, quad;
+    
+    printf("Digite dois numeros diferentes:\n");
+    scanf ("%d", &a);
+    scanf ("%d", &b);
+    
+    troca(&a,&b);
+    
+    printf ("\nApos a troca no main: a=%d e b=%d",a,b);
+    
+    soma (a,b,&res);
+    printf("\nSoma = %d", res);
+    quadcubo (a,b,&quad,&cubo);
+
+    printf ("\nQuadrado= %d cubo=%d",quad,cubo);
+    return 0;
+
+}
