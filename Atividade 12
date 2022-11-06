@@ -1,0 +1,47 @@
+#include <stdio.h>
+#define TAMANHO 10
+ 
+struct aluno{
+    int matricula;
+    float n1, n2, media;
+};
+
+float media(float n1, float n2)
+{
+    float media;
+    media=(n1 + n2)/2;
+    return (media);
+}
+
+int main()
+{
+    struct aluno v[TAMANHO];
+    float soma=0;
+    for(int i=0; i<TAMANHO; i++){
+        printf("\nMatricula: ");
+        scanf("%d", &v[i].matricula);
+        printf("Nota n1: ");
+        scanf("%f", &v[i].n1);
+        printf("Nota n2: ");
+        scanf("%f", &v[i].n2);
+        v[i].media = media(v[i].n1, v[i].n2);
+        soma = soma + v[i].media;
+    }
+        for(int i=0; i<TAMANHO; i++){
+            printf("\n -------Aluno %d--------", v[i].matricula);
+            printf ("\nNota da n1:%.2f", v[i].n1);
+            printf ("\nNota da n2:%.2f", v[i].n2);
+            if(v[i].media>=soma/TAMANHO)
+            printf("\n Media: %.2f ACIMA DA MEDIA");
+            else
+            printf("\n Media: %.2f ABAIXO DA MEDIA");
+            
+        }
+        printf ("\n ----DADOS DA TURMA----: ");
+        printf ("\n Alunos : %d", TAMANHO);
+        printf ("\n Media geral: %.2f", soma/TAMANHO);
+    
+    return 0;
+}
+
+
