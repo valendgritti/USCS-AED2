@@ -1,0 +1,46 @@
+#include <stdio.h>
+#define TAM 3
+
+typedef struct banda{
+    char nome[30];
+    char estilo[30];
+    int inte;
+    int ranking;
+}BANDA;
+
+void lebanda(BANDA *v){
+    for(int i=0;i<TAM;i++){
+        printf("Insira o nome da banda:\n");
+        scanf("%s", v[i].nome);
+        printf("Qual o estilo da banda?\n");
+        scanf("%s", v[i].estilo);
+        printf("Quantos integrantes ha na banda?\n");
+        scanf("%d", &v[i].inte);
+        printf("Em qual posição do rank ela está?\n");
+        scanf("%d", &v[i].ranking);
+    }
+}
+
+void mostrabanda(BANDA *v){
+    for(int i=0;i<TAM;i++){
+        printf("Nome da banda: %s\n", v[i].nome);
+        printf("Estilo da banda: %s\n", v[i].estilo);
+        printf("Quantidade de integrantes: %d\n", v[i].inte);
+        printf("Posição no rank: %d\n", v[i].ranking);
+        
+    }
+}
+
+int main(){
+    BANDA v[TAM];   
+    char musica[15];
+    
+    lebanda(v);
+    printf("\n\nLISTAGEM DAS BANDAS\n");
+    mostrabanda (v);
+    
+    return 0;
+  
+}
+
+
